@@ -26,3 +26,12 @@
 'U' or 'us'   # Microseconds
 'N'           # Nanoseconds
 ```
+
+
+**Use Prophet if:**
+
+```
+Data has missing months
+You’ll later add holidays/events
+You need business-friendly explainability
+You’re building dashboards or reports```
