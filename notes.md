@@ -27,6 +27,12 @@
 'N'           # Nanoseconds
 ```
 
+| Seasonality | Period            |
+| ----------- | ----------------- |
+| Daily       | `24`              |
+| Weekly      | `24 * 7 = 168`    |
+| Yearly      | `24 * 365 = 8760` |
+
 
 **Use Prophet if:**
 
@@ -34,4 +40,19 @@
 Data has missing months
 You’ll later add holidays/events
 You need business-friendly explainability
-You’re building dashboards or reports```
+You’re building dashboards or reports
+```
+
+[rnn-vs-lstm-vs-gru-vs-transformers
+](https://www.geeksforgeeks.org/deep-learning/rnn-vs-lstm-vs-gru-vs-transformers/)
+
+
+**A Simple Moving Average (SMA)** is a common technical indicator that smooths price data 
+by calculating the average closing price of an asset over a specific period (e.g., 10, 50, 200 days), 
+making it easier to identify trends and generate buy/sell signals by spotting crossovers 
+between short-term and long-term SMAs.
+
+_Calculate a 4-day simple moving average (SMA)_
+
+`
+df['SMA_4'] = df['values'].rolling(window=4).mean()`
