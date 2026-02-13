@@ -1,9 +1,5 @@
-from datetime import datetime, timedelta
-
 import streamlit as st
 import joblib
-import numpy as np
-import pandas as pd
 from models import batch_forecast_catboost_model, batch_forecast_lightBGM_model
 from upload import upload_data
 
@@ -68,14 +64,13 @@ def main():
 
     mode = st.sidebar.radio(
         "Input Method",
-        ["Single Prediction", "Batch Forecast", "Upload Historical Data"]
+        ["Batch Forecast", "Upload Historical Data"]
     )
 
-    option = st.selectbox("Select Model Type", ["LightGBM", "CatBoost"])
 
-    if mode == "Single Prediction":
-        st.header("Single Prediction")
-    elif mode == "Batch Forecast":
+    if mode == "Batch Forecast":
+
+        option = st.selectbox("Select Model Type", ["LightGBM", "CatBoost"])
 
         if option == "LightGBM":
             batch_forecast_lightBGM_model(energy_model)
